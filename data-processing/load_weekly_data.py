@@ -1,6 +1,7 @@
 # File to load weekly data from local files into memory, update your relative path as needed
 import os
 import pandas as pd
+from clean_data import clean_table
 
 RELATIVE_DATA_PATH = './../fantasydatapros-data/weekly/' # Relative data path for the weekly fantasy data folder
 
@@ -26,7 +27,9 @@ def load_all_tables():
 
 def load_weekly_data(): 
     tables = load_all_tables()
-    return pd.concat(tables)
+    full_table = pd.concat(tables)
+    clean_table(full_table)
+    return full_table
 
 if __name__ == "__main__":
     # If main, write it to a main csv file for testing

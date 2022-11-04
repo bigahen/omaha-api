@@ -46,7 +46,12 @@ DEFENSIVE_POSITIONS = {
     "RT",
     "SS",
     "SAF",
-    "RDE"
+    "RDE",
+    "DE",
+    "CB-KR",
+    "MIKE", # weird case where Antonio Morrison has MIKE at least once time,
+    "24", # Byron Hanspard
+    "UT", # Jonathan Babineaux
 }
 
 OFFENSIVE_POSITIONS = {
@@ -116,7 +121,11 @@ OFFENSIVE_POSITIONS = {
     "HB/K",
     "WR-P",
     "FB",
-    "FB'"
+    "FB'",
+    "WR/K",
+    "FB/R",
+    "XTE",
+    "87" # Eric Parker
 }
 
 OFFENSIVE_LINE_POSITIONS = {
@@ -128,7 +137,8 @@ OFFENSIVE_LINE_POSITIONS = {
     "LOT",
     "RG",
     "OT",
-    "G"
+    "G",
+    "X"
 }
 
 SPECIAL_TEAMS_POSITIONS = {
@@ -142,15 +152,11 @@ SPECIAL_TEAMS_POSITIONS = {
     "P/K",
     "PK",
     "KR/R",
-    "KR/P"
+    "KR/P",
+    "P"
 }
 
 OTHER_POSITIONS = { # This covers weird positions in the data which don't clearly map to anything specific
     "nan",
-    "87",
-    "UT",
-    "X",
-    "MIKE",
-    "24",
     "0"
 }
