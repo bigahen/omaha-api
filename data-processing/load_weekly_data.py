@@ -31,6 +31,5 @@ def load_weekly_data():
 if __name__ == "__main__":
     # If main, write it to a main csv file for testing
     combined_table = load_weekly_data()
-    #combined_table.reset_index(drop=True, inplace=True)
     print(combined_table)
     combined_table.to_csv(os.path.join("weekly_data.csv"))
