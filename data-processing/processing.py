@@ -1,6 +1,6 @@
 # Master file to orchestrate processing of data and uploading to RDS
 
-from load_weekly_data import load_weekly_data
+from load_weekly_data import load_weekly_data, load_weekly_data_from_file
 from data_positions import DEFENSIVE_POSITIONS, OFFENSIVE_POSITIONS, OFFENSIVE_LINE_POSITIONS, OTHER_POSITIONS, SPECIAL_TEAMS_POSITIONS
 
 class NFLPlayer:
@@ -30,7 +30,7 @@ def get_generic_position_mapping(actual_pos: str):
         return "OTHER"
     else:
         print(f"Postion mapping for {actual_pos} is missing!")
-        return "OTHER"
+        return "OTHER_MISSING"
 
 if __name__ == "__main__":
     weekly_data = load_weekly_data()
@@ -46,7 +46,7 @@ if __name__ == "__main__":
         team = row['Tm']
         player = NFLPlayer(name, position, team)
         if player.get_generic_position() == "OTHER":
-            #print(f"Player named {name} played weird position {position}")
+            print(f"Player named {name} played weird position {position}")
             unmapped_players.add((name, position))
 
         if name in player_name_to_nflplayer:

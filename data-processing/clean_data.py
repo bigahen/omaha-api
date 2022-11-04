@@ -5,7 +5,8 @@ def clean_table(weekly_data):
         position = row['Pos']
         
         cleaned_position = get_clean_position(name, position)
-        row['Pos'] = cleaned_position
+        if position != cleaned_position:
+            weekly_data.at[index, 'Pos'] = cleaned_position
 
 def get_clean_position(name, position):
     if str(position) == 'nan' or str(position) == '0':
@@ -68,7 +69,7 @@ def get_clean_position(name, position):
         elif name == "Virgil Green":
             return "TE" 
         elif name == "James Davis":
-            return "RN" 
+            return "RB" 
         elif name == "Michael Davis":
             return "CB" 
         elif name == "Tae Crowder":

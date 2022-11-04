@@ -27,9 +27,12 @@ def load_all_tables():
 
 def load_weekly_data(): 
     tables = load_all_tables()
-    full_table = pd.concat(tables)
+    full_table = pd.concat(tables, ignore_index=True)
     clean_table(full_table)
     return full_table
+
+def load_weekly_data_from_file():
+    return pd.read_csv(os.path.join("weekly_data.csv"))
 
 if __name__ == "__main__":
     # If main, write it to a main csv file for testing
