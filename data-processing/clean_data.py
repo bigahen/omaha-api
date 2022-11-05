@@ -85,3 +85,99 @@ def get_clean_position(name, position):
             return position
     else:
         return position
+
+
+# Special rules for duplicate names 
+
+"""
+Tony Carter 
+    year > 2001 = new player 
+
+Chris Johnson 
+    year > 2005 = new player 
+
+Dexter Jackson
+    year > 2003 = new player
+
+Levi Brown 
+    year > 2008 = new player
+
+Jimmy Smith
+    year > 2005 = new player
+
+Marvin Jones 
+    year > 2001 = new player 
+
+Josh Norman
+    year > 2003 = new player
+
+Chris Davis
+    year > 2008 = new player
+
+Kyle Williams 
+    year > 2013 = new player
+
+D.J. Moore
+    year > 2012 = new player
+    
+Chris Jones
+    TODO - pull all the data and figure this one out lol
+
+Michael Thomas
+    TODO - pull all data and confirm, but I believe not NOR player is a seperate person 
+
+Josh Harris
+    year > 2014 = new player
+
+Quincy Wilson
+    year > 2006 = new player
+
+Nick Williams
+    year > 2018 = new player
+
+Josh Allen
+    TODO - figure this one out but probably it will be QB vs DE
+
+Daniel Thomas
+    year > 2014 = new player
+
+Kenny Moore
+    year > 2010 = new player
+
+John Simon
+    year > 2003 = new player
+
+Brandon Jones
+    year > 2009 = new player
+
+Brandon Williams
+    TODO - multiple, figure this one out 
+
+Kendall Lamm
+    year > 2015 = new player
+
+Kyle Nelson
+    year > 2013 = new player
+
+Austin Johnson 
+    year > 2015 = new player
+
+Greg Little
+    year > 2014 = new player
+
+Nick Harris
+    year > 2011 = new player
+
+Lamar Jackson
+    RAV vs NYJ
+
+J.R. Reed
+    year > 2007 = new player
+
+Tony Brown
+    WAS vs CIN
+
+Bobby Brown
+    year > 2000 new player 
+
+"""

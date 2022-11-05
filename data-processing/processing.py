@@ -53,12 +53,12 @@ if __name__ == "__main__":
             nflplayer = player_name_to_nflplayer[name]
             if player.get_generic_position() != nflplayer.get_generic_position() and player.team_abr != nflplayer.team_abr:
                 if name not in duplicate_players:
-                    positions = [player.get_generic_position(), nflplayer.get_generic_position()]
+                    positions = [player.position, nflplayer.position]
                     duplicate_players[name] = positions
                 else: 
                     current_duplicate_positions = duplicate_players[name]
-                    if player.get_generic_position() not in current_duplicate_positions:
-                        current_duplicate_positions.append(player.get_generic_position())
+                    if player.position not in current_duplicate_positions:
+                        current_duplicate_positions.append(player.position)
                         print(f"Found a new duplicate for player named {name} and position {current_duplicate_positions}")
         else:
             player_name_to_nflplayer[name] = player

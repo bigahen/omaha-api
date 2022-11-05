@@ -49,6 +49,8 @@ DEFENSIVE_POSITIONS = {
     "RDE",
     "DE",
     "CB-KR",
+    "CB-K",
+    "CB/K",
     "MIKE", # weird case where Antonio Morrison has MIKE at least once time,
     "24", # Byron Hanspard
     "UT", # Jonathan Babineaux
@@ -125,6 +127,7 @@ OFFENSIVE_POSITIONS = {
     "WR/K",
     "FB/R",
     "XTE",
+    "X",
     "87" # Eric Parker
 }
 
@@ -138,13 +141,10 @@ OFFENSIVE_LINE_POSITIONS = {
     "RG",
     "OT",
     "G",
-    "X"
 }
 
 SPECIAL_TEAMS_POSITIONS = {
     "K",
-    "CB-K",
-    "CB/K",
     "KR",
     "PR",
     "S/KR",
