@@ -2,3 +2,4 @@ venv/
 .vscode
 .csv
 data-processing/__pycache__/
+*/*/__pycache__/
