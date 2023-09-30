@@ -1,6 +1,7 @@
 # File to load weekly data from local files into memory, update your relative path as needed
 import os
 import pandas as pd
+import uuid
 from clean_data import clean_table
 
 RELATIVE_DATA_PATH = './../fantasydatapros-data/weekly/' # Relative data path for the weekly fantasy data folder
@@ -34,8 +35,21 @@ def load_weekly_data():
 def load_weekly_data_from_file():
     return pd.read_csv(os.path.join("weekly_data.csv"))
 
+def append_uuid(cleaned_table):
+    uuids = dict()
+
+    cleaned_table.insert(1, "player_id", "0")
+
+    for index, row in cleaned_table.iterrows():
+        name = row['Player']
+        if name not in uuids:
+            generated_uuid = str(uuid.uuid4())
+            uuids[name] = generated_uuid
+        cleaned_table.at[index, 'player_id'] = uuids[name]
+
 if __name__ == "__main__":
     # If main, write it to a main csv file for testing
     combined_table = load_weekly_data()
+    append_uuid(cleaned_table=combined_table)
     print(combined_table)
     combined_table.to_csv(os.path.join("weekly_data.csv"))
